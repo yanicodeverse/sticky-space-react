@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    overflow: hidden;
+  }
+
+  .app {
+    padding: 50px;
+    height: 100vh;
+  }
+
+  .app::before {
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background: url(./assets/space.jpg) no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .app h1 {
+    font-family: 'Syne Mono', monospace;
+    letter-spacing: 0.45rem;
+    color: white;
+  }
+
+  .app span {
+    display: block;
+    color: darken(white, 20%);
+    font-size: .85rem;
+    font-style: italic;
+    height: 14px;
+  }
+  
+  .note-form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+
+  .note-form > textarea {
+    font-family: 'Syne Mono', monospace;
+    font-weight: bold;
+    border: 1px solid lightgrey;
+    min-width: 100%;
+    max-width: 100%;
+    height: 100px;
+    padding: 10px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  .note-form button {
+    width: 100%;
+    background: linear-gradient(to right, rgb(25, 1, 53), rgb(231, 41, 73));
+    cursor: pointer;
+    padding: 10px; 
+    border: 0;
+    outline: none;
+    text-transform: uppercase;
+    font-family: 'Syne Mono', monospace;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .note-form button:hover {
+    background: linear-gradient(to right,
+    rgb(42, 2, 87), rgb(214, 73, 96));
+    color: rgb(209, 209, 211);
+  }
+
+  .note {
+    position: absolute;
+    cursor: pointer;
+    background-image: url(assets/note.png);
+    background-size: cover;
+    top: 100px;
+    left: 300px;
+    height: 300px;
+    width: 300px;
+    padding: 80px;
+  }
+
+  .note .text {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+    color: white;
+  }
+
+  .note .text::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+  }
+
+  .note .text::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.637);
+    border-radius: 10px;
+  }
+
+  .close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 83px;
+    color: white;
+    transition: transform .3s ease;
+  }
+
+  .close:hover {
+    transform: scale(1.6);
+  }
